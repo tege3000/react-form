@@ -3,7 +3,11 @@ import React, {useState} from 'react';
 const App =  () => {
     const [players, ] = useState(new Array(10).fill(0).map((_, idx) => `Player ${idx+1}`));
     const [firstName, setFirstName] = useState("Tito Egeonu");
-    
+
+    const onFirstNameChange = event => {
+      setFirstName(event.target.value);
+    }
+
     return (
         <div className="border m-4 p-4">
           <form>
@@ -12,6 +16,7 @@ const App =  () => {
                 className="form-control"
                 required
                 value = {firstName}
+                onChange = {onFirstNameChange}
                 placeholder="Enter your name"
                 name="name"
               />
