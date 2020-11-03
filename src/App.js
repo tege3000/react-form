@@ -1,6 +1,7 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 const App =  () => {
+    const [players, ] = useState(new Array(10).fill(0).map((_, idx) => `Player ${idx+1}`));
 
     return (
         <div className="border m-4 p-4">
@@ -15,8 +16,9 @@ const App =  () => {
             </div>
             <div className="form-group">
               <select className="form-control" name="player">
-                <option>Player #1</option>
-                <option>Player #2</option>
+                { players.map((val, index) => (
+                  <option key={index}>{val}</option>
+                ))}
               </select>
             </div>
             <div className="form-group">
