@@ -2,7 +2,8 @@ import React, {useState} from 'react';
 
 const App =  () => {
     const [players, ] = useState(new Array(10).fill(0).map((_, idx) => `Player ${idx+1}`));
-
+    const [firstName, setFirstName] = useState("Tito Egeonu");
+    
     return (
         <div className="border m-4 p-4">
           <form>
@@ -10,6 +11,7 @@ const App =  () => {
               <input
                 className="form-control"
                 required
+                value = {firstName}
                 placeholder="Enter your name"
                 name="name"
               />
